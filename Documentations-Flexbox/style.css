@@ -1,0 +1,51 @@
+.container {
+    background-color: #cccccc;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+     /** Column | row-reverse | column-reverse */
+
+    flex-wrap: nowrap; 
+    /** wrap | wrap-reverese (Pular a linha dos componentes)*/
+
+    flex-flow: row nowrap; 
+    /* (flex-direction, flex-wrap) facilia a utilização*/
+
+    justify-content: space-around; 
+    /** flex-end | center | space-between | scape around; seta o alinhamento horizontal dos items no container*/
+       
+    align-items: flex-start;
+    /** flex-start | flex-end | center | baseline; seta o alinhamento vertical dos items */
+
+    align-content: flex-start;
+    /** flex-start | flex-end | center | stretch | space-between | space-around */
+}
+
+.item {
+    background-color: cadetblue;
+    color: black;
+    padding: 20px;
+    margin: 5px;
+    width: 50px;
+    flex-grow: 0;
+    flex-shrink: 1;
+    /*flex: 1 1 300px; /** (flex-grow, flex-shrink, flex-basis)*/
+    
+}
+
+.art-1 {
+    order: 1; /* Define a ordem dos elementos*/    
+    align-self: auto; /* Sobreescreve o alinhamento definido do container(align-items) para o item específico*/
+}
+
+.art-2 {
+    order: 3;
+}
+
+.art-3 {
+    order: 2;
+}
+
+.art-4 {
+    order: 4;
+}
