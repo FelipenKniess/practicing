@@ -1,0 +1,136 @@
+/* RESET*/
+
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+ul, nav {
+    list-style: none;
+}
+
+ a {
+    text-decoration: none;
+    cursor: pointer;
+    opacity: 0.9;
+    transition: text-shadow 0.2s;
+} 
+
+
+header nav a:hover {
+    opacity: 1;
+    text-shadow: 1px 1px 1px #33C877;
+}
+
+header{
+    /* position: absolute;
+    top: 0;
+    left: 0; */
+    display: flex;
+    width: 100%;
+
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 150px;
+
+}
+
+header nav {
+    display: flex;
+}
+
+header nav li a{
+    color: #191c03;
+}
+
+header nav li {
+    margin: 0 15px;
+}
+
+header li:first-child {
+    margin-left: 0px;
+}
+
+header li:last-child {
+    margin-right: 0px;
+}
+
+@media(max-width:840px) {
+    header{
+        flex-direction: column;
+    }
+    header img {
+        margin-bottom: 15px;
+    } 
+}
+
+/* Hero*/
+
+.hero {
+    background-image: url('../assets/rio.jpg');
+    background-size: cover;
+    min-height: 100vh;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.hero h1 {
+    font-size: 3.2rem;
+    margin-bottom: 15px;
+}
+.hero h3 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.hero .btn {
+    background-color: #33C877;
+    border-radius: 4px;
+    color: #191c03;
+    padding: 20px 50px;
+    text-transform: uppercase;
+    transition: padding 0.5s;
+}
+
+.hero .btn:hover {
+    padding: 20px 60px;
+}
+
+@media(max-width:700px) {
+    .hero h1{
+        font-size: 2.3rem;
+    }
+    .hero h3 {
+        font-size: 1.5rem;
+    } 
+}
+
+footer{
+    display: flex;
+    flex-direction: column;
+    padding: 20px 150px;
+    align-items: center;
+}
+
+footer ul {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+footer ul li {
+    margin: 0px 15px;
+}
+
+footer ul li a {
+    color: black;
+}
+
+footer p {
+    color: #185835;
+}
