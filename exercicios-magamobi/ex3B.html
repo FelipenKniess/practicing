@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            font-size: 1.5vw;
+            text-align: center;
+        }
+        
+        .container{
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .topo {
+            background-color: green;
+            justify-content: flex-start;
+            height: 100px;
+        }
+
+        .lateral-esquerda {
+            background-color: blue;
+            width: 10%;
+            height: 820px;
+        }
+
+        .conteudo {
+            background-color: aqua;
+            flex: 1; 
+            height: 820px;
+        }
+
+        .conteudoint {
+            display: flex;
+        }
+
+        .rodape {
+            background-color: green; 
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="topo">
+            <h1>TOPO</h1>
+        </div>
+        <div class="conteudoint">
+            <div class="lateral-esquerda">
+                <h1>LATERAL ESQUERDA</h1>
+            </div>
+            <div class="conteudo">
+                <h1>CONTEÚDO</h1>
+            </div>
+        </div>
+        <div class="rodape">
+            <h1>RODAPÉ</h1>
+        </div>
+    </div>
+</body>
+</html>

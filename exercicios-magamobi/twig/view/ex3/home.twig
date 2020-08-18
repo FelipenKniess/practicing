@@ -1,0 +1,22 @@
+{% extends "base.twig" %}
+
+{% block css %}
+    {{ parent() }}
+    button {
+        color:blue;
+        width: 100px;
+    }
+{% endblock %}
+
+{% block js %}
+    {{ parent() }}
+{% endblock %}
+
+{% block title %}Produto{% endblock %}
+{% block body %}
+    <h1>BEM VINDO A PÁGINA HOME</h1>
+
+    <button type="button" onclick="onClickAlertar()">
+        Alertar
+    </button>
+{% endblock %}

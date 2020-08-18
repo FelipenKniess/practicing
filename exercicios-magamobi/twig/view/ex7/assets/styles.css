@@ -1,0 +1,124 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color:inherit;
+}
+
+
+/** HEADER */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 5em;
+    margin-right: 5em;
+}
+
+input {
+    color: #6A6180;
+    border-radius: 5px;
+}
+
+.logoHead {
+    width: 6em;
+}
+
+.boxInput {
+    display: flex;
+    align-items: center;
+}
+
+.boxInput img {
+    height: 20px;
+    margin-left: 5px;
+    cursor: pointer;
+    transition: 0.2s height;
+}
+
+.boxInput img:hover {
+    height: 25px;
+}
+.login {
+    font-size: 15px;
+}
+.login a {
+    font-weight: bold;
+    color: inherit;
+}
+.search {
+    width: 500px;
+    height: 30px;
+}
+
+
+.carrinho {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height:  50px;
+    width: 80px;
+    border: 1px solid #d3d3d3;
+    border-radius: 15px;
+    transition: 0.3s border;
+    cursor: pointer;
+}
+
+.carrinho:hover {
+    border: 1px solid black;
+}
+
+.carrinho img {
+    margin-right: 10px;
+}
+/* CONTAINER*/
+
+.content{
+    height: 700px;
+}
+
+/* FOOTER*/
+
+footer {
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 5em;
+    margin-right: 5em;
+}
+
+.formas-pagamento {
+    margin-left: 20px;
+}
+
+footer a:hover {
+    font-weight: bold;
+}
+.selos {
+    display: grid;
+    flex-direction: row;
+    height: 150px;
+}
+
+.logo img {
+    width: 6em;
+}
+
+.logo p img {
+    width: 16px;
+    margin-right: 5px;
+}
+
+.selos img {
+    justify-self: center;
+}
+
+.formas-pagamento .cartoes {
+    display: grid;
+    grid-template-columns: 40px 40px 40px;
+    grid-gap: 4px;
+    
+}
+
+

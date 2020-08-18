@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato</title>
+    <style>
+        body {
+            margin-left: 50px;
+        }
+        .header h1 {
+            color: rgb(28, 133, 28);
+        }
+
+        .header {
+            margin-left: 50px;
+        }
+
+        form  {
+            display: flex;
+        }
+
+        form  .fieldLabels {
+            display: flex;
+            flex-direction: column;
+        }
+
+        form  .fieldInputs {
+            display: flex;
+            flex-direction:column;
+        }
+
+        form  .fieldLabels label {
+            margin: 5px;
+            text-align: right;
+            padding-top: 2px;
+        }
+
+        form  .fieldInputs input,textarea {
+            margin: 5px;
+            width: 500px;
+        }
+
+        form .fieldInputs button {
+            margin: 5px;
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Contato IFBA</h1>
+        <p>Rua José Rodrigues dos Santos S/N - Bairro Nobre</p>
+        <p>Brumado -BA - Brasil</p>
+        <p>Telefone (77) 3441-2405</p>
+    </div>
+    
+    <form>
+        <div class="fieldLabels">
+            <label for="nome">Nome</label>
+            <label for="email">E-mail</label>
+            <label for="Assunto">Assunto</label>
+            <label for="nome">Mensagem</label>
+        </div>
+        <div class="fieldInputs">
+            <input type="text">
+            <input type="email">
+            <input type="text">
+            <textarea rows="7"></textarea>
+            <button type="submit">Enviar</button>
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficha cadastral</title>
+</head>
+<style>
+
+	form div + div {
+    	margin-top: 1em;
+	}
+
+	select {
+		margin-right: 122px
+	}
+
+	label {
+	    display: inline-block;
+	    width: 127px;
+	    text-align: left;
+	}
+
+	#nome {
+		width: 474px;
+	}
+
+	#cpfLabel {
+		text-align: left;
+	}
+
+	#endereco {
+		width: 474px;
+	}
+
+	.field {
+		display: flex;	
+	}
+
+	form {
+		width: 38em;
+		display: flex;
+		flex-direction: column;
+	}
+
+	button {
+		margin-top: 10px;
+		width: 100px;
+		align-self: center;
+	}
+	 
+
+</style>
+<body>
+    <h1>Ficha Cadastral</h1>
+    <form>
+    	<div class="field">
+    		<label for="nome">Nome:</label>
+    		<input type="text" id="nome">
+    	</div>
+
+	    <div class="field">
+    		<label for="rg">RG:</label>
+    		<input type="text" name="rg">
+
+    		<label for="cpf" id="cpfLabel">C.P.F.:</label>
+    		<input type="text" name="cpf" id="cpf">
+    	</div>
+
+    	<div class="field">
+    		<label for="endereco">Endereço:</label>
+    		<input type="text" name="endereco" id="endereco">
+    	</div>
+
+    	<div class="field">
+    		<label for="sexo">Sexo:</label>
+    		<select name="sexo">
+    			<option value="m">Masculino</option>
+    			<option value="f">Feminino</option>
+    		</select>
+
+    		<label for="dataNasc">Data Nascimento:</label>
+    		<input type="date" name="dataNasc">
+    	</div>
+
+    	<div class="field">
+    		<label>Situação Civil:</label>
+
+    		<input type="radio" name="sc">
+    		<label>Solteiro(a)</label>
+
+    		<input type="radio" name="sc">
+    		<label>Casado(a)</label>
+
+    		<input type="radio" name="sc">
+    		<label>Viúvo</label>
+    	</div>	
+    	<button type="reset">Limpar Dados</button>
+    </form>
+</body>
+</html>
+

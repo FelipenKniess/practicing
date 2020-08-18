@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+        {% block css %}
+            h1 {
+                color: red;
+            }
+        {% endblock %}
+        </style>
+        
+        <script>
+        {% block js %}
+            function onClickAlertar(){
+                alert('Alertouu!');
+            }
+        {% endblock %}
+        </script>
+        <title>{% block title %}{% endblock %}</title>
+    </head>
+    <body>
+        {% block body %}
+        {% endblock %}
+    </body>
+</html>

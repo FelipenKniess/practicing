@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex2</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <link href="view/ex2/styles.css" rel="stylesheet">
+</head>
+<body>
+    {% set produtos = [
+        {
+            'nome': 'Smartphone Xiaomi Redmi Note 8 64GB Versão Global Desbloqueado Preto',
+            'valor': 1299.96,
+            'url': 'https://www.cissamagazine.com.br/smartphone-xiaomi-redmi-note-8-64gb-desbloqueado-preto',
+            'imagem': 'https://29028l.ha.azioncdn.net/img/2019/09/produto/180351/19/large/smartphone-xiaomi-redmi-note-8-preto.jpg'
+        },
+        {
+            'nome': 'Smartphone Xiaomi Redmi Note 8 64GB Versão Global Desbloqueado Branco',
+            'valor': 1299.96,
+            'url': 'https://www.cissamagazine.com.br/smartphone-xiaomi-redmi-note-8-64gb-desbloqueado-branco',
+            'imagem': 'https://29028l.ha.azioncdn.net/img/2019/09/produto/180355/19/large/smartphone-xiaomi-redmi-note-8-branco.jpg'
+        },
+        {
+            'nome': 'Smartphone Xiaomi Redmi Note 8 64GB Versão Global Desbloqueado Azul',
+            'valor': 1299.96,
+            'url': 'https://www.cissamagazine.com.br/smartphone-xiaomi-redmi-note-8-64gb-desbloqueado-azul',
+            'imagem': 'https://29028l.ha.azioncdn.net/img/2019/09/produto/180347/19/large/smartphone-xiaomi-redmi-note-8-azul.jpg'
+        },
+        {
+            'nome': 'Fone de Ouvido Bluetooth Xiaomi Redmi Airdots Preto',
+            'valor': 138.72,
+            'url': 'https://www.cissamagazine.com.br/fone-ouvido-xiaomi-airdots-twsej04lm-preto',
+            'imagem': 'https://29028l.ha.azioncdn.net/img/2019/08/produto/176006/19/large/fone-de-ouvido-xiaomi-redmi-airdots.jpg'
+        },
+    ]%}
+
+    <h3>Produtos relacionados</h3>
+    <div class="container">
+        {% for produto in produtos %}
+            <a href={{produto.url}}>
+                <div class="produto">
+                    <img src={{produto.imagem}} alt="produto">
+                    <p class="descricao">{{produto.nome}}</p>
+                    <div class="estrelas">
+                        <div class="estrelasInt">
+                            <input type="radio" id="cm_star-empty" name="fb" value="" checked/>
+                            <label for="cm_star-1"><i class="fa"></i></label>
+                            <input type="radio" id="cm_star-1" name="fb" value="1"/>
+                            <label for="cm_star-2"><i class="fa"></i></label>
+                            <input type="radio" id="cm_star-2" name="fb" value="2"/>
+                            <label for="cm_star-3"><i class="fa"></i></label>
+                            <input type="radio" id="cm_star-3" name="fb" value="3"/>
+                            <label for="cm_star-4"><i class="fa"></i></label>
+                            <input type="radio" id="cm_star-4" name="fb" value="4"/>
+                            <label for="cm_star-5"><i class="fa"></i></label>
+                            <input type="radio" id="cm_star-5" name="fb" value="5"/>
+                        </div>
+                        <p class="qtdstars">(225)</p>
+                    </div>
+                    <p class="preco">R$ {{produto.valor}}</p>
+                    <p class="formaPagamento">no boleto bancário</p>
+                </div>
+            </a>
+        {% endfor %}
+    </div>
+</body>
+</html>

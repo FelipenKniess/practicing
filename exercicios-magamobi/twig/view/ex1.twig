@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex1</title>
+</head>
+<body>
+    {% set cor = 'azul' %}
+    {% set estacao = null %}
+    {% set ano = 2020 %}
+    {% set numeros = [0, 1, 10, 20, 80, 40, 5] %}
+    {% set isInverno = true %}
+    {% set temperatura = 23 %}
+
+    <h3>Temperatura é maior que 10 e menor que 20?</h3>
+    {% if temperatura > 10 and temperatura < 20 %}
+        <h4>R: Sim</h4>
+    {% else %}
+        <h4>R: Não</h4>
+    {% endif %}
+    <hr>
+    
+    <h3>Estação é outono?</h3>
+    {% if estacao == 'outono' %}
+        <h4>R: Sim</h4>
+    {% else %}
+        <h4>R: Não</h4>
+    {% endif %}
+    <hr>
+
+    <h3>Se o tamanho do array números for maior ou igual a 7 realizar a listagem deles</h3>
+    {% if numeros|length >= 7 %}
+        <ul>
+            {% for numero in numeros %}
+                <li>{{ numero }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <h4>R: Não é maior ou igual a 7</h4>
+    {% endif %}
+    <hr>
+
+    <h3>A cor é vermelha ou azul?</h3>
+    <h4>A cor é {{cor}}</h4>
+    <hr>
+
+    <h3>Existe um usuário?</h3>
+    <h4>Existe</h4>
+
+    <h3>isInverno é verdadeiro?</h3>
+    {% if isInverno %}
+        <h4>Sim</h4>
+    {%else%}
+        <h4>Não</h4>
+    {% endif %}
+    <h4></h4>
+</body>
+</html>

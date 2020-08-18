@@ -1,0 +1,55 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+.container {
+    width: 80%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.time {
+    display: flex;
+}
+
+.time p + p {
+    margin-left: 15px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th {
+    color: #3897CC;
+    padding: 8px;
+    background: #EEEEEE;
+    
+}
+
+td {
+    padding: 4px;
+}
+
+.alignTdCenter{
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: #5BB6E0;
+    padding: 5px;
+    transition: 0.2s color;
+}
+a img {
+    margin-right: 4px;
+}
+a:hover {
+    color: #3897CC;
+}
