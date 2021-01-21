@@ -6,153 +6,16 @@
     <title>Document</title>
 </head>
 <body>
-    <script type="text/javascript">
-        $(function () {
-            'use strict';
-
-        var mouseMove = function (event) {
-            var self = $(this);
-            var mouseOffset = {
-                x: event.pageX,
-                y: event.pageY
-            };
-            var imgOffset = {
-                x: Math.round(self.offset().left),
-                y: Math.round(self.offset().top)
-            };
-            var mousePos = {
-                x: mouseOffset.x - imgOffset.x,
-                y: mouseOffset.y - imgOffset.y
-            };
-            var imgSize = {
-                width: self.closest('.img-area .figure-ctn').find('#img-principal').width(),
-                height: self.closest('.img-area .figure-ctn').find('#img-principal').height()
-            };
-            var fullImgSize = {
-                width: self.closest('.img-area .figure-ctn').find('.image-zoom').find('.full-image').width(),
-                height: self.closest('.img-area .figure-ctn').find('.image-zoom').find('.full-image').height()
-            };
-            var square = self.find('.square');
-            if (!square.length) {
-                square = $('<div class="square"></div>');
-                square.css({
-                    width: Math.min(imgSize.width * self.closest('.img-area .figure-ctn').find('.image-zoom').width() / fullImgSize.width, imgSize.width),
-                    height: Math.min(imgSize.height * self.closest('.img-area .figure-ctn').find('.image-zoom').height() / fullImgSize.height, imgSize.height)
-                });
-                self.append(square);
-            }
-            var squarePos = {
-                top: Math.min(Math.max(mousePos.y - square.height() / 2, 0), self.height() - square.outerHeight()),
-                left: Math.min(Math.max(mousePos.x - square.width() / 2, 0), self.width() - square.outerWidth())
-            };
-            square.css(squarePos);
-            var razao = {
-                x: fullImgSize.width / imgSize.width,
-                y: fullImgSize.height / imgSize.height
-            };
-            self.closest('.img-area .figure-ctn').find('.image-zoom').find('.full-image-ctn').css({
-                left: squarePos.left * razao.x * -1,
-                top: squarePos.top * razao.y * -1
-            });
-        };
-
-        var $imgWrapper = $('.img-area .figure-ctn .img-wrapper');
-        var $iconZoom = $('<div class="icon-zoom"><div class="seta"></div><div class="arrow_box">Clique para zoom</div>');
-        $imgWrapper.append($iconZoom);
-        $imgWrapper.mousemove(function (mouse) {
-            var offset = $imgWrapper.offset();
-            var mousex, mousey;
-            mousex = mouse.pageX - offset['left'];
-            mousey = mouse.pageY - offset['top'];
-            $iconZoom.css("left", mousex);
-            $iconZoom.css("top", mousey);
-        });
-
-        $imgWrapper.mouseenter(function () {
-            $iconZoom.show();
-        });
-
-        $imgWrapper.mouseleave(function () {
-            $iconZoom.hide();
-        });
-
-        $imgWrapper.on('click', function () {
-            $iconZoom.hide();
-            if (!$(this).closest('.img-area .figure-ctn').find('.image-zoom').length) {
-
-                var divZoomSecondImage = '';
-
-                if ($(this).hasClass('second-image-full')) {
-                    var divZoomSecondImage = 'second-image';
-                }
-
-                var divZoom = $('<div class="image-zoom ' + divZoomSecondImage + '"></div>');
-                divZoom.css({
-                    overflow: 'hidden'
-                });
-                var divFullImgCtn = $('<div class="full-image-ctn"></div>');
-                divFullImgCtn.css({
-                    position: 'absolute',
-                    width: 10000,
-                    height: 10000
-                });
-                var img = $('<img class="full-image" />');
-                img.attr('src', $(this).find('img').attr('data-img-full'));
-                divFullImgCtn.append(img);
-                divZoom.append(divFullImgCtn);
-                $(this).closest('.img-area .figure-ctn').append(divZoom);
-                if (divZoom.is(':visible')) {
-                    $(this).closest('.img-area .figure-ctn').find('.full-image').load(function () {
-                        $('.img-area .figure-ctn .img-wrapper').bind('mousemove', mouseMove);
-                    });
-                }
-            }
-        });
-
-            $('.img-area .figure-ctn .img-wrapper').on('mouseleave', function () {
-                $(this).closest('.img-area .figure-ctn').find('.image-zoom').remove();
-                $(this).find('.square').remove();
-                $('.img-area .figure-ctn .img-wrapper').unbind('mousemove', mouseMove);
-            });
-        });
-
-        $(document).on('click', '.miniatura-galeria', function () {
-            console.log('testetqewrqw');
-            var nextElement = $(this).next();
-            var prevElement = $(this).prev();
-            var currentElement = $(this);
-
-            nextElement = $(nextElement);
-            prevElement = $(prevElement);
-
-            var url = currentElement.attr('data-img-max');
-            var url2 = $(nextElement).attr('data-img-max');
-
-            var imgFull = currentElement.attr('data-img-full');
-            var imgFull2 = $(nextElement).attr('data-img-full');
-
-            $('.miniatura-galeria').removeClass('selected');
-            currentElement.addClass('selected');
-
-            $(nextElement).addClass('selected');
-
-            if (typeof url2 == 'undefined') {
-                url2 = $(prevElement).attr('data-img-max');
-                imgFull2 = $(prevElement).attr('data-img-full');
-                $(prevElement).addClass('selected');
-            }
-
-
-            $('.img-wrapper img').eq(0).attr('src', url);
-            $('.img-wrapper img').eq(1).attr('src', url2);
-
-            $('.img-wrapper img').eq(0).attr('data-img-full', imgFull);
-            $('.img-wrapper img').eq(1).attr('data-img-full', imgFull2);
-            $('.img-wrapper').eq(1).addClass('second-image-full');
-
-            return false;
-        });
-    </script>
+    <div class="img-area">
+        <figure class="figure-ctn">
+            <div class="img-wrapper">
+                <img src="" alt="">
+            </div>
+            <div class="img-wrapper">
+                <img src="" alt="">
+            </div>
+        </figure>
+    </div>
 
 </body>
 </html>
